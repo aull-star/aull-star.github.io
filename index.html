@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<meta charset='UTF-8'/>
+<meta content='width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5' name='viewport'/>
+<meta content='IE=edge' http-equiv='X-UA-Compatible'/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Antique:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<link href="ray.css" rel="stylesheet" type="text/css" />
+<script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+<script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+<head>
+<title>Happy Birthday</title>
+<link rel="icon" type="image/x-icon" href="https://malasid.github.io/favicon.png">
+</head>
+
+<body>
+
+<audio src="Sheila.mp3" id="linkmp3" class="sembunyi"></audio>
+
+<div id="bodyblur">
+  <img src="we2.jpeg" id="wallpaper"/>
+  <div id="beneranblur"></div>
+</div>
+
+<div id='Content'>
+
+  <div id="kadoIn">
+    <img src="https://feeldreams.github.io/kadoin.png"/>
+  </div>
+  <p id="ket">Klik Kadonya!</p>
+
+  <div class="kumpulanstiker">
+    <img src="https://feeldreams.github.io/bunga.gif" id="fotostiker"/>
+    <img src="https://feeldreams.github.io/pusn.gif" id="fotostiker1"/>
+    <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker2"/>
+    <img src="https://feeldreams.github.io/cilukba.gif" id="fotostiker3"/>
+    <img src="https://feeldreams.github.io/pandakuning.gif" id="fotostiker4"/>
+    <img src="https://feeldreams.github.io/emawh.gif" id="fotostiker5"/>
+    <img src="https://feeldreams.github.io/pandacoklat.gif" id="fotostiker6"/>
+  </div>
+
+  <p id="halo" class="halo"></p>
+
+  <div>
+    <blockquote id='bq' data-text='㋡'>
+      <p id="kalimat">Binull ada sesuatu buat kamu</p>
+
+      <p id="pesan1">Klik 4 LOVE!</p>
+      <div id="kolombaru">
+        <li id="lv1">❤️</li>
+        <li id="lv2">❤️</li>
+        <li id="lv3">❤️</li>
+        <li id="lv4">❤️</li>
+      </div>
+
+      <p id="pesan2">Tunggu ya...</p>
+
+      <p id="pesan3">Ciee.. ada yang Ultah nih</p>
+      <p id="pesan4">HAPPIEST BIRTHDAY, </p>
+      <p id="pesan5" class="gaya2">Selamat nambah tuir ya hahaha</p>
+      <p id="pesan6" class="gaya2">Semoga diumur sekarang ga gampang sakit pinggang oke</p>
+      <p id="pesan7" class="gaya2">Sehat selalu pokonya kurangin prengat prengutnya 😘 eh jangan deng</p>
+
+      <p id="pesan8" class="gaya2">Canda wkwwk :v</p>
+      <p id="pesan9" class="gaya2">Oh iya, Semoga hari istimewa ini membawa keberkahan, kebahagiaan, kesuksesan dan duit yang tak terduga.. 🥳❤️</p>
+      <p id="pesan10" class="gaya2">Happy Level Up Day!! ❤️😘</p>
+      
+
+      <p id="opsL">Klik untuk Lanjut</p>
+    </blockquote>
+  </div>
+
+  <div id="Tombol"><a id="By">&#128140; Lanjut</a></div>
+
+  <p id="katatambahan" class="sembunyi">Gajadi deh soalnya kamu jarang mandi 😭🤪</p>
+
+  <div id="pesanditolak">
+    <img id="stikerditolak" src="https://feeldreams.github.io/weee.gif"/>
+    <p id="kataditolak">Yaudah kalo gamau mh 😜</p>
+  </div>
+
+</div>
+
+<script>
+const body = document.querySelector("body");
+const swalst = Swal.mixin({
+  timer: 2300,
+  allowOutsideClick: false,
+  showConfirmButton: false,
+  timerProgressBar: true,
+  imageHeight: 90,
+});
+
+audio = new Audio(linkmp3.src);
+fungsiAwal = 0;
+
+function berjatuhan() {
+  const heart = document.createElement("div");
+  heart.className = "fas fa-snowflake";
+  heart.style.left = (Math.random() * 90) + "vw";
+  heart.style.animationDuration = (Math.random()*3)+2+"s";
+  body.appendChild(heart);
+}
+
+setInterval(function () {
+  var heartArr = document.querySelectorAll(".fa-snowflake");
+  if (heartArr.length > 100) {heartArr[0].remove()}
+},100);
+
+Content.style = "opacity:1;margin-top:16vh";
+
+const swals = Swal.mixin({
+  allowOutsideClick: false,
+  cancelButtonColor: '#FF0040',
+  imageHeight: 80,
+});
+
+// Klik kado
+document.getElementById("kadoIn").onclick = function() {
+  if(fungsiAwal==0){
+    audio.play();
+    fungsiAwal=1;
+    kadoIn.style="transition:all .8s ease;transform:scale(10);opacity:0";
+    wallpaper.style="transform: scale(1.5);";
+    ket.style="display:none";
+    setTimeout(initengahan,300);
+    setTimeout(inipesan,500);
+  }
+}
+
+// TANPA INPUT NAMA
+async function inipesan(){
+  nama = "Aull";
+  window.nama = nama;
+  vketikhalo = "Hai, " + nama + " ♡";
+  mulainama();
+}
+
+// WA
+var tanya = 'Mau kado ga nih?';
+var opstanya = 'Ayo jawab';
+var tompositif = 'Mau';
+var tomnegatif = 'Engga';
+
+async function menuju(){
+  pesanwhatsapp = "Makasii udah ngucapin " + nama + " ultah ><";
+  await swals.fire('OK!', 'Kirim jawabannya ke WhatsApp aku, ya!', 'success');
+  window.location = "https://api.whatsapp.com/send?phone=&text=" + pesanwhatsapp;
+}
+
+// munculin video setelah pesan10
+const pesan10 = document.getElementById("pesan10");
+const video = document.getElementById("videoku");
+
+// observer buat detect kapan pesan10 muncul
+const observer = new MutationObserver(() => {
+  if(pesan10.style.display !== "none"){
+    setTimeout(() => {
+      video.classList.remove("sembunyi");
+      video.play();
+    }, 1500); // delay biar dramatis 😏
+  }
+});
+
+observer.observe(pesan10, { attributes: true, attributeFilter: ['style'] });
+</script>
+
+<script src="hbd.js"></script>
+
+</body>
+</html>
